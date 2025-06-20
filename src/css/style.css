@@ -1,0 +1,349 @@
+html {
+  font-size: 62.5%;
+
+}
+
+body {
+  background: linear-gradient(150deg, #000000, #f35454);
+  background-size: 500% 350%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+
+}
+
+
+/*NOME*/
+
+.nome {
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  inset: 0;
+}
+
+.nome::after {
+  content: url('../images/down-arrow.png');
+  height: 35px;
+  bottom: 40px;
+  position: absolute;
+  animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+
+.nome::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../images/background-nome\ 1920-1080.jpg') center center no-repeat;
+  filter: blur(4px);
+}
+
+
+
+@keyframes downarrow {
+  0% {
+    -webkit-transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  100% {
+    -webkit-transform: translateY(0.4em);
+    opacity: 0.9;
+  }
+
+}
+
+@-webkit-keyframes downarrow {
+  0% {
+    -webkit-transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  100% {
+    -webkit-transform: translateY(0.4em);
+    opacity: 0.9;
+  }
+}
+
+@media(max-width:425px) {
+  .nome {
+    height: 60vh;
+  }
+
+  .nome h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.nomes {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  padding: 1rem;
+  box-sizing: border-box;
+
+}
+
+.nomes h1 {
+  font-weight: 800;
+  font-size: 6rem;
+  color: #fff;
+}
+
+.nomes h3 {
+  font-weight: 400;
+  font-size: 3rem;
+  color: #eeeeee;
+}
+
+.nomes h2 {
+  font-weight: 400;
+  color: #eeeeee;
+}
+
+
+/*Animacao de Digitando*/
+.greetings {
+  font-size: 4rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #333;
+  /* Cursor piscante */
+  width: 8ch;
+  /* Ajuste para o tamanho da palavra "Editando" */
+  animation:
+    typing 3s steps(11) infinite,
+    /* Animação de digitação */
+    blink 0.2s step-end infinite;
+  /* Animação do cursor piscante */
+}
+
+/* Animação de digitação */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10ch;
+  }
+}
+
+/* Animação do cursor piscante */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/*Sobre*/
+
+.sobre {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 20rem;
+  height: 80vh;
+}
+
+.sobre-mim h1 {
+  margin-top: 15rem;
+  font-size: 50px;
+  text-align: center;
+  color: #eee;
+
+
+}
+
+
+.sobre-mim p {
+  font-size: 20px;
+  margin-top: 60px;
+  margin: 60px 40rem 0;
+  text-align: center;
+  text-align: justify;
+  color: #eee;
+}
+
+
+@media(max-width:1300px) {
+  .sobre-mim p {
+    margin: 50px;
+    align-items: center;
+    text-align: justify;
+  }
+
+  .sobre-mim h2 {
+    margin: 0;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media(max-width:800px) {
+  .sobre-mim p {
+    margin: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-mim h2 {
+    margin: 0;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/*Habilidades*/
+
+.habilidades {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+}
+
+.habilidades h1 {
+  margin-top: 15rem;
+  font-size: 50px;
+  text-align: center;
+  color: #eee;
+}
+
+.habilidades .container {
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.habilidades .container .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 4px 4px 30px 8px rgba(200, 207, 200, 0.3);
+  background-color: #f35454;
+}
+
+.habilidades .container .item img {
+  width: 100px;
+  height: 100px;
+}
+
+
+.habilidades .container .item p {
+  font-size: 20px;
+  justify-self: center;
+  color: #eee;
+}
+
+/* HOVER */
+
+.habilidades .container .item:hover {
+  scale: 1.1;
+  transition: 0.3s ease-in-out;
+  background-color: var(--primary-orange);
+}
+
+@media (max-width:600px) {
+  .habilidades h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width:366px) {
+  .habilidades .container .item img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width:1170px) {
+  .habilidades .container .item img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width:1070px) {
+  .habilidades .container .item img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+@media (max-width:375px) {
+  .habilidades h1 {
+    font-size: 40px;
+  }
+}
+
+
+/*Contato*/
+
+.contato {
+  height: 40vh;
+ 
+}
+
+.contato h1 {
+  margin-top: 15rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 50px;
+  color: #eee;
+}
+
+.social {
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.social .ico-git{
+  font-size: 25px;
+  text-align: center;
+  color: #eee;
+  transition: 0.3s;
+}
+
+.social .ico-git:hover{
+  color: #636466;
+}
+
+.social .ico-linkedin{
+  font-size: 25px;
+  text-align: center;
+  color: #eee;
+  transition: 0.3s;
+}
+
+.social .ico-linkedin:hover{
+  color: #0e76a8;;
+}
+
+.copyright{
+  color: #eee;
+  font-size: 15px;
+  margin-top:  10rem;
+}
+
+
+.email {
+  color: #eee;
+  font-size: 25px;
+}

@@ -1,0 +1,29 @@
+
+.header .header-conteiner {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    height: 9vh;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+    background: linear-gradient(150deg, #000000, #f35454);
+    background-size: 120% 120%;
+}
+
+.header h1 {
+    margin-left: 10rem;
+    font-size: 3rem;
+    font-weight: 700;
+    transition: 0.3s;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #eee;
+    
+}
+
+.header a:hover h1 {
+    color: #f35454;
+}
+
+

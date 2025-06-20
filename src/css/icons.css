@@ -1,0 +1,51 @@
+.sb_flex-row {
+    display: flex;
+    flex-direction: row;
+    top: 30%;
+    right: 0;
+    width: 100px;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.sb_flex-row a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 15px;
+    transition: color 0.5s;
+}
+
+.icons-github:hover {
+    color: #636466;
+    transform: scale(1.2) rotate(360deg);
+}
+
+.icons-linkedin:hover {
+    color: #0e76a8;
+    transform: scale(1.2) rotate(360deg);
+}
+
+.icons-email:hover {
+    color: peru;
+    transform: scale(1.2) rotate(360deg);
+}
+
+.sb_flex-row hr {
+    border-bottom:3px solid red;
+    width: 0;
+    padding: 11px;
+    height: 0px;
+}
+
+@media (min-width: 800px) {
+    .sb_flex-row {
+        z-index: -0;
+        opacity: 0;
+        margin-left: 1000rem;
+        
+    }
+
+}
