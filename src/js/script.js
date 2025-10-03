@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.transform = 'translateY(0)';
     });
 
+    // Garantir que os links de email funcionem
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Permitir que o link funcione normalmente
+            console.log('Link de email clicado:', this.href);
+        });
+    });
+
     // Função para inicializar carrossel
     function initCarousel(containerId) {
         const containerImg = document.querySelector(containerId);

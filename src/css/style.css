@@ -258,17 +258,12 @@ body {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #f35454;
-  /* Cursor piscante */
-  width: 8ch;
-  /* Ajuste para o tamanho da palavra "Bem vindo" */
-  animation:
-    typing 3s steps(11) infinite,
-    /* Animação de digitação */
-    blink 0.2s step-end infinite;
-  /* Animação do cursor piscante */
+  width: 0;
   text-shadow: 0 0 10px rgba(243, 84, 84, 0.5);
   margin-bottom: 2rem;
-  animation: fadeInUp 1s ease-out 0.6s both;
+  animation: 
+    typing 3s steps(11) 0.6s forwards,
+    blink 1s step-end infinite;
 }
 
 /* Animação de digitação */
@@ -278,13 +273,16 @@ body {
   }
 
   to {
-    width: 10ch;
+    width: 11ch;
   }
 }
 
 /* Animação do cursor piscante */
 @keyframes blink {
-  50% {
+  0%, 50% {
+    border-color: #f35454;
+  }
+  51%, 100% {
     border-color: transparent;
   }
 }
@@ -990,6 +988,9 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   min-width: 120px;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
 }
 
 .social .ico-git:hover {
@@ -1008,6 +1009,14 @@ body {
   color: #f35454;
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(243, 84, 84, 0.3);
+}
+
+/* Garantir que os links de email sejam clicáveis */
+a[href^="mailto:"] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  position: relative;
+  z-index: 10;
 }
 
 .contact-social {
