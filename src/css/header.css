@@ -8,22 +8,178 @@
     justify-content: space-between;
     align-items: center;
     min-height: 75px;
-    background: linear-gradient(150deg, #000000, #f35454);
-    background-size: 120% 120%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(243, 84, 84, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .header h1 {
     margin-left: 10rem;
     font-size: 3rem;
-    font-weight: 700;
-    transition: 0.3s;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #eee;
-    
+    font-weight: 800;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #eee 0%, #f35454 50%, #eee 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: -0.02em;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+.header h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(243, 84, 84, 0.4), transparent);
+    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f35454, #ff6b6b, #f35454);
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+
+.header h1:hover::before {
+    left: 100%;
+}
+
+.header h1:hover::after {
+    width: 100%;
+}
+
+.header a:hover h1 {
+    transform: translateY(-3px) scale(1.05);
+    filter: drop-shadow(0 8px 16px rgba(243, 84, 84, 0.3));
+    animation: logoGlow 2s ease-in-out infinite;
+}
+
+/* Responsividade do Header */
+@media (max-width: 1200px) {
+    .header h1 {
+        margin-left: 5rem;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .header h1 {
+        margin-left: 3rem;
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        margin-left: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .header .header-conteiner {
+        height: 8vh;
+        min-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        margin-left: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .header .header-conteiner {
+        height: 7vh;
+        min-height: 50px;
+    }
+}
+
+@media (max-width: 375px) {
+    .header h1 {
+        margin-left: 0.5rem;
+        font-size: 1.3rem;
+    }
+
+    .header .header-conteiner {
+        height: 6vh;
+        min-height: 45px;
+    }
 }
 
 .header a:hover h1 {
     color: #f35454;
+    transform: scale(1.05);
+    text-shadow: 2px 2px 8px rgba(243, 84, 84, 0.5);
 }
 
+/* Efeitos de scroll para o header */
+.header .header-conteiner.scrolled {
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(243, 84, 84, 0.3);
+}
 
+/* Animação de entrada do header */
+@keyframes headerSlideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        filter: drop-shadow(0 8px 16px rgba(243, 84, 84, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 8px 20px rgba(243, 84, 84, 0.6));
+    }
+}
+
+.header .header-conteiner {
+    animation: headerSlideDown 0.8s ease-out;
+}
+
+/* Efeito de brilho no logo */
+@keyframes logoGlow {
+    0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 2px 2px 8px rgba(243, 84, 84, 0.3), 0 0 20px rgba(243, 84, 84, 0.1);
+    }
+}
+
+.header h1:hover {
+    animation: logoGlow 2s ease-in-out infinite;
+}

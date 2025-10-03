@@ -51,8 +51,8 @@
 
 @media (max-width: 800px) {
     .sb_flex-col {
-    opacity: 0;
-        
+        display: none;
+        opacity: 0;
     }
 
     .sb_flex-col a {
@@ -63,6 +63,24 @@
     .sidebar hr {
         display: none;
         /* Esconde as linhas horizontais em telas pequenas */
+    }
+}
+
+@media (max-width: 600px) {
+    .sb_flex-col {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .sb_flex-col {
+        display: none !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .sb_flex-col {
+        display: none !important;
     }
 }
 

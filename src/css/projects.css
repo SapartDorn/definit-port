@@ -4,47 +4,137 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 200vh;
+    min-height: auto;
+    padding: 8rem 0 4rem;
+    background: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
 }
 
+.projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/background-nome 1920-1080.jpg') center center no-repeat;
+    background-size: cover;
+    opacity: 0.02;
+    z-index: -1;
+}
 
 .projects h1 {
-    margin-top: 15rem;
+    margin-top: 0;
     font-size: 50px;
     text-align: center;
     color: #eee;
+    position: relative;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.projects h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #f35454, transparent);
+    border-radius: 2px;
 }
 
 
+
+.projects-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
 .projects-list .card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 250px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 3rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out;
+}
+
+.projects-list .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(243, 84, 84, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.projects-list .card:hover::before {
+    left: 100%;
+}
+
+.projects-list .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(243, 84, 84, 0.2);
+    border-color: rgba(243, 84, 84, 0.3);
 }
 
 
 
 /* --- PROJECT INFO --- */
 .project-info h2 {
-    font-weight: lighter;
-    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
     color: #eee;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.project-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f35454, #ff6b6b);
+    transition: width 0.3s ease;
+}
+
+.project-info:hover h2::after {
+    width: 50px;
 }
 
 .project-info p {
-    font-size: 17px;
-    margin-bottom: 30px;
+    font-size: 16px;
+    margin-bottom: 25px;
     text-align: justify;
-    color: #eee;
+    color: #ccc;
+    line-height: 1.6;
+    transition: all 0.3s ease;
 }
 
 .project-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1rem;
+}
+
+.project-info:hover p {
+    color: #eee;
 }
 
 .project-info .links {
@@ -60,27 +150,171 @@
     padding: 10px 20px;
     border-radius: 4px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: 0.2s ease-in;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .project-info .links a:hover {
     color: #3b3b3b;
-    transition: 0.2s ease-in;
+    background-color: #f35454;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 
 /* --- IMG PREVIEW --- */
 .projects-list .card .container-img {
-    width: 520px;
-    height: 315px;
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .projects-list .card .container-img img {
-    border-radius: 5px;
+    border-radius: 15px;
     width: 100%;
     height: 100%;
-    transition: opacity 0.5s ease;
+    object-fit: cover;
+    transition: all 0.4s ease;
     opacity: 1;
+}
+
+.projects-list .card .container-img:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.projects-list .card .container-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(243, 84, 84, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projects-list .card .container-img:hover::after {
+    opacity: 1;
+}
+
+/* Galeria de imagens no hover */
+.image-gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 2.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 15px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Delays removidos - controle via JavaScript */
+
+/* Efeito hover na galeria */
+.projects-list .card .container-img:hover .image-gallery {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Apenas uma imagem visível por vez */
+.projects-list .card .container-img:hover .gallery-img {
+    opacity: 0;
+    transform: translateX(100%);
+    display: block;
+}
+
+/* Apenas a imagem ativa fica visível */
+.projects-list .card .container-img:hover .gallery-img.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Efeito de carrossel automático - removido para evitar conflitos */
+
+/* Animação de entrada */
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efeito de fade entre imagens */
+.projects-list .card .container-img:hover .project-img {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+/* Ícones de tecnologia nos projetos */
+.project-info .tech-used {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-info .tech-used .skill-icon-fa {
+    font-size: 4rem;
+    color: #eee;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.project-info .tech-used .skill-icon-fa:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(243, 84, 84, 0.4));
+}
+
+/* Cores específicas para cada tecnologia */
+.project-info .tech-used .html-icon {
+    color: #e34f26;
+}
+
+.project-info .tech-used .css-icon {
+    color: #1572b6;
+}
+
+.project-info .tech-used .angular-icon {
+    color: #dd0031;
+}
+
+.project-info .tech-used .tailwind-icon {
+    color: #06b6d4;
 }
 
 
@@ -90,27 +324,89 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 150px 50px;
     }
 
     .project-info {
         align-items: center;
         text-align: center;
+        margin-top: 30px;
     }
 
     .project-info p {
         text-align: center;
+        font-size: 16px;
     }
 
     .project-info .tech-used {
         margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
     }
 
+    .projects-list .card .container-img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .projects-list .card {
+        padding: 120px 40px;
+    }
+
+    .project-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .project-info p {
+        font-size: 15px;
+    }
+
+    .project-info .links a {
+        font-size: 14px;
+        padding: 9px 18px;
+    }
+
+    .projects-list .card .container-img {
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 900px) {
+    .projects-list .card {
+        padding: 100px 30px;
+    }
+
+    .project-info h2 {
+        font-size: 1.6rem;
+    }
+
+    .project-info p {
+        font-size: 14px;
+    }
+
+    .project-info .links a {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    .projects-list .card .container-img {
+        max-width: 500px;
+    }
+
+    .project-info .tech-used img {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 @media (max-width:600px) {
     section.projects {
         width: 100vw;
-        position: relative;
         left: 50%;
         right: 50%;
         margin-left: -50vw;
@@ -119,6 +415,8 @@
 
     .projects-list .card {
         border-radius: 0;
+        padding: 50px 20px;
+        margin-bottom: 10px;
     }
 
     .projects .subtitle,
@@ -126,12 +424,56 @@
     .projects h1 {
         padding: 0 20px;
     }
+
+    .project-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .project-info p {
+        font-size: 14px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .project-info .links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .project-info .links a {
+        font-size: 13px;
+        padding: 8px 16px;
+        width: 200px;
+        text-align: center;
+    }
+
+    .projects-list .card .container-img {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .project-info .tech-used {
+        margin: 15px 0;
+        gap: 8px;
+    }
+
+    .project-info .tech-used img {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 @media (max-width:480px) {
+    .projects-list .card {
+        padding: 30px 15px;
+    }
+
     .projects-list .card .container-img {
-        width: 420px;
-        height: 254px;
+        width: 100%;
+        height: 180px;
     }
 
     .projects-list .card .container-img img {
@@ -141,20 +483,96 @@
     .project-info .links {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         align-items: center;
+    }
+
+    .project-info .links a {
+        width: 180px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .project-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .project-info p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .project-info .tech-used img {
+        width: 25px;
+        height: 25px;
     }
 }
 
 @media (max-width:440px) {
+    .projects-list .card {
+        padding: 20px 10px;
+    }
+
     .projects-list .card .container-img {
-        width: 100vw;
-        height: 100%;
+        width: 100%;
+        height: 160px;
+    }
+
+    .project-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .project-info p {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .project-info .links a {
+        width: 160px;
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    .project-info .tech-used img {
+        width: 20px;
+        height: 20px;
     }
 }
 
 @media (max-width:375px) {
     .projects .end h2 {
         font-size: 20px;
+    }
+
+    .projects-list .card {
+        padding: 15px 8px;
+    }
+
+    .projects-list .card .container-img {
+        height: 140px;
+    }
+
+    .project-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .project-info p {
+        font-size: 11px;
+        line-height: 1.2;
+    }
+
+    .project-info .links a {
+        width: 140px;
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .project-info .tech-used img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .project-info .tech-used {
+        gap: 5px;
     }
 }

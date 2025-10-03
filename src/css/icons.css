@@ -49,3 +49,27 @@
     }
 
 }
+
+@media (max-width: 800px) {
+    .sb_flex-row {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .sb_flex-row {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .sb_flex-row {
+        display: none !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .sb_flex-row {
+        display: none !important;
+    }
+}

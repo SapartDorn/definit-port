@@ -1,3 +1,9 @@
-:root{
+:root {
     --max-width-size: 1920px;
+    --primary-color: #f35454;
+    --background-dark: #000000;
+    --text-light: #eeeeee;
+    --font-size-base: 16px;
+    --spacing-unit: 1rem;
+    --transition-speed: 0.3s;
 }

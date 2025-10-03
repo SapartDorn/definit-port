@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Leonardo Rocha </title>
 
     <link rel="stylesheet" href="src/css/reset.css">
@@ -67,27 +70,27 @@
     <section class="nome">
         <div class="nomes">
             <h2 class="greetings">Bem vindo</h2>
-            <h1>Meu nome é Leonardo</h1>
+            <h1 class="gradient-text">Meu nome é Leonardo</h1>
             <h3 class="front-end">Desenvolvedor Full Stack</h3>
 
             <div class="sb_flex-row">
                 <hr>
-                <a href="https://github.com/SapartDorn" title="GitHub" target="_blank" class="icons-github"><i
+                <a href="https://github.com/SapartDorn" title="GitHub" target="_blank" class="icons-github interactive"><i
                         class="fab fa-github"></i></a>
 
                 <a href="https://www.linkedin.com/in/leonardor0cha/" title="LinkedIn" target="_blank"
-                    class="icons-linkedin"><i class="fab fa-linkedin"></i></a>
+                    class="icons-linkedin interactive"><i class="fab fa-linkedin"></i></a>
 
-                <a href="mailto:leonardorocha@xrotecode.com" title="Email" class="icons-email"><i
+                <a href="mailto:leonardorocha@xrotecode.com" title="Email" class="icons-email interactive"><i
                         class="fas fa-envelope"></i></a>
                 <hr>
             </div>
         </div>
-
+        <div class="down-arrow"></div>
     </section>
 
 
-    <section class="sobre" id="sobre">
+    <section class="sobre fade-in" id="sobre">
         <div class="sobre-mim">
             <h1>Sobre</h1>
             <p>
@@ -106,63 +109,128 @@
     </section>
 
 
-    <section class="habilidades" id="habilidades">
+    <section class="habilidades fade-in" id="habilidades">
         <h1>Habilidades</h1>
         <div class="container from-bttom hidden-show">
-            <div class="item"><img src="./src/images/html-icon.png" alt="">
+            <div class="item interactive">
+                <i class="fab fa-html5 skill-icon-fa html-icon"></i>
                 <p>HTML</p>
             </div>
 
-            <div class="item"><img src="./src/images/css-icon.png" alt="">
+            <div class="item interactive">
+                <i class="fab fa-css3-alt skill-icon-fa css-icon"></i>
                 <p>CSS</p>
             </div>
 
-            <div class="item"><img src="./src/images/javascript-icon.png" alt="">
+            <div class="item interactive">
+                <i class="fab fa-js-square skill-icon-fa js-icon"></i>
                 <p>JavaScript</p>
             </div>
 
-            <div class="item"><img src="./src/images/react-icon.png" alt="">
+            <div class="item interactive">
+                <i class="fab fa-react skill-icon-fa react-icon"></i>
                 <p>React</p>
             </div>
 
-            <div class="item"><img src="./src/images/git-icon.png" alt="">
+            <div class="item interactive">
+                <i class="fab fa-angular skill-icon-fa angular-icon"></i>
+                <p>Angular</p>
+            </div>
+
+            <div class="item interactive">
+                <i class="fab fa-css3-alt skill-icon-fa tailwind-icon"></i>
+                <p>Tailwind</p>
+            </div>
+
+            <div class="item interactive">
+                <i class="fab fa-node-js skill-icon-fa node-icon"></i>
+                <p>Node.js</p>
+            </div>
+
+
+            <div class="item interactive">
+                <i class="fas fa-database skill-icon-fa sql-icon"></i>
+                <p>SQL</p>
+            </div>
+
+            <div class="item interactive">
+                <i class="fab fa-git-alt skill-icon-fa git-icon"></i>
                 <p>Git</p>
             </div>
 
-            <div class="item"><img src="./src/images/github-card-icon.png" alt="">
+            <div class="item interactive">
+                <i class="fab fa-github skill-icon-fa github-icon"></i>
                 <p>GitHub</p>
             </div>
 
-
+            <div class="item interactive">
+                <i class="fab fa-docker skill-icon-fa docker-icon"></i>
+                <p>Docker</p>
+            </div>
 
         </div>
     </section>
 
 
-    <section class="projects" id="projects">
+    <section class="projects fade-in" id="projetos">
         <h1>Projetos Pessoais</h1>
       
 
         <div class="projects-list">
 
             <!-- PROJETO 1 -->
-            <div class="card from-bottom hidden">
-                <div class="container-img" id="container-img">
-                    <img class="project-img" src="./src/Projetos/Land-page/IMG-1.png"  alt="Project image">
+            <div class="card from-bottom hidden interactive">
+                <div class="container-img" id="container-img-1">
+                    <img class="project-img" src="./src/Projetos/Land-page/XYZ-1.png" alt="Project image">
+                    <div class="image-gallery">
+                        <img class="gallery-img" src="./src/Projetos/Land-page/XYZ-2.png" alt="Project image 2">
+                        <img class="gallery-img" src="./src/Projetos/Land-page/XYZ-3.png" alt="Project image 3">
+                        <img class="gallery-img" src="./src/Projetos/Land-page/XYZ-4.png" alt="Project image 4">
+                    </div>
                 </div>
 
                  <div class="project-info">
                         <div class="tech-used">
-                            <img src="./src/images/html-icon.png" alt="HTML Icon">
-                            <img src="./src/images/css-icon.png" alt="CSS Icon">
-                        
+                            <i class="fab fa-html5 skill-icon-fa html-icon"></i>
+                            <i class="fab fa-css3-alt skill-icon-fa css-icon"></i>
                         </div>
                         <h2>Land Page</h2>
                         <p>Um dos meus primeiros projetos ao iniciar meus estudos! Trata-se de um layout completo de uma landing page para uma agência fictícia. Representou uma excelente oportunidade para praticar conceitos de flex e grid como iniciante. Além disso, é totalmente responsivo, adaptando-se a diferentes tamanhos de tela.</p>
 
                         <div class="links">
-                            <a href="https://github.com/SapartDorn/landing-pages" target="_blank" class="project-repository">Link do Repositório</a>
-                            <a href="https://sapartdorn.github.io/landing-pages/" target="_blank" class="project-link">Link do Projeto</a>
+                            <a href="https://github.com/SapartDorn/landing-pages" target="_blank" class="project-repository interactive">Link do Repositório</a>
+                            <a href="https://sapartdorn.github.io/landing-pages/" target="_blank" class="project-link interactive">Link do Projeto</a>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- PROJETO 2 -->
+            <div class="card from-bottom hidden interactive">
+                <div class="container-img" id="container-img-2">
+                    <img class="project-img" src="./src/Projetos/Land-page/DJP-1.png" alt="Project image">
+                    <div class="image-gallery">
+                        <img class="gallery-img" src="./src/Projetos/Land-page/DJP-2.png" alt="Project image 2">
+                        <img class="gallery-img" src="./src/Projetos/Land-page/DJP-3.png" alt="Project image 3">
+                        <img class="gallery-img" src="./src/Projetos/Land-page/DJP-4.png" alt="Project image 4">
+                        <img class="gallery-img" src="./src/Projetos/Land-page/DJP-5.png" alt="Project image 5">
+                        <img class="gallery-img" src="./src/Projetos/Land-page/DJP-6.png" alt="Project image 6">
+                        <img class="gallery-img" src="./src/Projetos/Land-page/DJP-7.png" alt="Project image 7">
+                    </div>
+                </div>
+
+                 <div class="project-info">
+                        <div class="tech-used">
+                            <i class="fab fa-html5 skill-icon-fa html-icon"></i>
+                            <i class="fab fa-css3-alt skill-icon-fa css-icon"></i>
+                            <i class="fab fa-angular skill-icon-fa angular-icon"></i>
+                            <i class="fab fa-css3-alt skill-icon-fa tailwind-icon"></i>
+                        </div>
+                        <h2>DJP Logística</h2>
+                        <p>Desenvolvi um site completo para uma empresa de logística, criando uma interface moderna e funcional que destaca os serviços de transporte e entrega. O projeto inclui seções para apresentação da empresa, serviços oferecidos, área de contato e depoimentos de clientes. Desenvolvido com foco na responsividade e experiência do usuário, adaptando-se perfeitamente a diferentes dispositivos.</p>
+
+                        <div class="links">
+                            <a href="https://github.com/SapartDorn/landing-pages" target="_blank" class="project-repository interactive">Link do Repositório</a>
+                            <a href="https://djplogistica.netlify.app/" target="_blank" class="project-link interactive">Link do Projeto</a>
                         </div>
                     </div>
             </div>
@@ -182,7 +250,6 @@
                 </div>
             </a>
 
-
             <a href="https://www.linkedin.com/in/leonardor0cha/" target="_blank" class="ico-linkedin">
                 <i class="fab fa-linkedin"></i>
                 <div>
@@ -191,15 +258,53 @@
                 </div>
             </a>
 
+            <a href="mailto:leonardorocha@xrotecode.com" class="ico-email">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <div class="contact-email contact-social"></div>
+                    <p class="contact-social-p">Email</p>
+                </div>
+            </a>
+        </div>
 
-            <div class="footer-body">
+        <div class="footer-body">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Leonardo Rocha</h3>
+                    <p>Desenvolvedor Full Stack</p>
+                    <p>Transformando ideias em soluções digitais</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#habilidades">Habilidades</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
 
-                <a href="mailto:leonardorocha@xrotecode.com" class="email">Email:leonardorocha@xrotecode.com</a>
+                <div class="footer-contact">
+                    <h4>Entre em Contato</h4>
+                    <p><i class="fas fa-envelope"></i> leonardorocha@xrotecode.com</p>
+                    <p><i class="fab fa-github"></i> github.com/SapartDorn</p>
+                    <p><i class="fab fa-linkedin"></i> linkedin.com/in/leonardor0cha</p>
+                </div>
+            </div>
 
-                <p class="copyright">© 2025 Leonardo Rocha</p>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Leonardo Rocha. Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-tech">
+                    <p>Desenvolvido com <i class="fas fa-heart"></i> usando HTML, CSS e JavaScript</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <script src="src/js/script.js"></script>
 </body>
 
 </html>

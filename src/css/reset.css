@@ -1,21 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     border: none;
     outline: none;
     font-weight: 300;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-img{
+img {
     max-width: 100%;
+    height: auto;
 }
